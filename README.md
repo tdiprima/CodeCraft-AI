@@ -23,3 +23,6 @@ python ai_agents.py "build a REST API client class" --save api_client --show-tes
 ```
 
 The agents leverage real AI for planning, code generation, review, and test creation. Each agent sends specialized prompts to OpenAI to ensure quality output.
+
+## License
+[MIT](LICENSE) — use it however you want, just keep the license file and toss some credit my way.
