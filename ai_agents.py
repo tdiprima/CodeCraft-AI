@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 AI Agent System for Code Generation using OpenAI API
-
 Four specialized agents that use OpenAI to generate quality code from prompts.
+
+Author: Tammy DiPrima
 """
 
 import os
@@ -17,13 +18,18 @@ class AIAgent:
     def __init__(self, name: str, role: str):
         self.name = name
         self.role = role
-        self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+        # self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+        self.client = OpenAI(
+            api_key=os.getenv("XAI_API_KEY"),
+            base_url="https://api.x.ai/v1"
+        )
     
     def call_openai(self, prompt: str, system_message: str) -> str:
         """Make API call to OpenAI"""
         try:
             response = self.client.chat.completions.create(
-                model="gpt-4.1",
+                # model="gpt-4.1-nano",
+                model="grok-4-0709",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": prompt}
