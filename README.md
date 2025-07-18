@@ -13,6 +13,7 @@ Creation of code through AI agents
 ```bash
 pip install -r requirements.txt
 export OPENAI_API_KEY=your_key_here
+export XAI_API_KEY=your_key_here # If you're using Grok
 ```
 
 ## Usage
